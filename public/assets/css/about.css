@@ -1,0 +1,80 @@
+.body-about {
+    background: url("https://www.spruko.com/demo/claylist/Claylist/assets/images/banners/banner2.jpg") center center fixed;
+
+    height: 40vh;
+    background-size: cover;
+    background-repeat: no-repeat;
+    position: relative;
+    margin-bottom: -3p
+}
+
+.why-us {
+    background-color: #f1eef7;
+    padding-bottom: 20px;
+}
+
+.hp {
+    padding-left: 20%;
+    padding-right: 20%;
+    color: #605e7e;
+}
+
+
+@media only screen and (max-width: 1000px) {
+    .hp {
+        padding-left: 2%;
+        padding-right: 2%;
+    }
+}
+
+.hp2 {
+    padding-left: 20%;
+    padding-right: 20%;
+    color: #605e7e;
+}
+
+@media only screen and (max-width: 1100px) {
+    .hp2 {
+        padding-left: 0%;
+        padding-right: 00%;
+    }
+}
+
+
+.form input,
+textarea {
+    width: 90%;
+    margin: 4px;
+    margin-left: 2px;
+
+    border: 1px solid #e8ebf3
+        /* margin: auto;/ */
+}
+
+.textarea {
+    margin-left: 2px;
+}
+
+.gtxt a {
+    color: white;
+}
+
+.gtxt a:hover {
+    color: #ccc;
+}
+
+
+#map {
+    height: 500px;
+    
+    width: 100%;
+    
+  }
+.zoom-out{
+    transition: transform .2s;
+}
+
+  .zoom-out:hover{
+    transform: scale(1.1);
+    box-shadow: 0px 0px 6px 0px #ccc;
+  }

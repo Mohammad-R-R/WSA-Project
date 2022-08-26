@@ -1,0 +1,212 @@
+nav {
+    background-color: #ffffff;
+}
+
+#navv {
+    background-color: #ffffff;
+
+}
+
+/* #navv{
+    background-color: transparent;
+    position: fixed;
+    
+} */
+
+.bodyy {
+    background: url("https://www.spruko.com/demo/claylist/Claylist/assets/images/banners/banner1.jpg") center center fixed;
+
+    height: 80vh;
+    background-size: cover;
+    background-repeat: no-repeat;
+    position: relative;
+    margin-bottom: -3p
+}
+
+.color {
+    background: linear-gradient(-225deg, #dc354555 0%, #0d6efd55 48%, #dc354555 100%);
+    height: 100%;
+}
+
+.center {
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    align-content: center;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    /* bottom: 40%; */
+    left: 0;
+    right: 0;
+    color: aliceblue;
+}
+
+.slide {
+    min-height: 55vh;
+    background-color: #f1eef7;
+}
+
+
+.photo {
+    height: 350px;
+}
+
+
+.Testimonial {
+    background: url("https://www.spruko.com/demo/claylist/Claylist/assets/images/products/products/prism.png");
+    min-height: 20vh;
+}
+
+
+.colored {
+    height: 100%;
+    background: linear-gradient(-225deg, #dc354555 0%, #0d6efd55 48%, #dc354555 100%)
+}
+
+.text-head {
+    color: rgb(84, 87, 90);
+    text-align: center;
+    padding-top: 3px;
+}
+
+
+
+
+.carousel-control-next-icon,
+.carousel-control-prev-icon {
+    background-color: #000;
+    padding: 39px;
+    border-radius: 50%;
+    background-size: 40px !important;
+}
+
+.staff {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    justify-content: center;
+    align-items: center;
+    height: 350px;
+    background-color: transparent;
+    position: relative;
+    bottom: 110px;
+    /* background: url("https://www.spruko.com/demo/claylist/Claylist/assets/images/products/products/prism.png"); */
+}
+
+.imgg {
+    height: 80px;
+    width: 80px;
+    position: relative;
+    
+}
+
+.cutter {
+    min-height: 40vh;
+    
+    text-align: center;
+    padding-bottom: 20px;
+    display: flex;
+    flex-direction: column;
+    align-content: center;
+    justify-content: center;
+    align-items: center;
+}
+
+@media only screen and (max-width: 1100px) {
+    .cutter {
+        height: 100%;
+        width: 100%;
+        padding-bottom: 20px;
+        text-align: center;
+        /* background-color: #ec296b; */
+
+        display: flex;
+        flex-direction: column;
+        align-content: center;
+        justify-content: center;
+        align-items: center;
+    }
+}
+
+.footer {
+    background-color: #373346;
+    height: 50vh;
+}
+
+.cardyy {
+    background-color: #373346;
+}
+
+.sis {
+    display: inline-flex;
+    border-radius: 2px;
+}
+
+.sis input {
+    border-radius: 2px;
+    border: 0;
+    min-height: 30px;
+}
+
+.sis button {
+    background-color: #ec296b;
+    width: 30%;
+    border: 0;
+    border-radius: 2px;
+    min-height: 50px;
+
+}
+
+
+.first {
+    display: inline-flex;
+    flex-direction: row;
+    align-content: center;
+    align-items: baseline;
+    justify-content: flex-start;
+}
+
+.first address {
+
+    padding-left: 10px;
+
+}
+
+.foot {
+    text-align: center;
+}
+
+.rexa {
+    font-size: x-large;
+    text-shadow: 1px 1px 2px black;
+}
+
+.serv li a {
+    color: white;
+}
+
+.serv li a:hover {
+    color: #ec296b;
+
+
+
+}
+
+address:hover {
+    color: #ec296b;
+}
+
+address {
+    color: #6c757d;
+}
+
+
+.emo:hover {
+    color: #ec296b;
+}
+
+.emo {
+    color: #6c757d;
+}
