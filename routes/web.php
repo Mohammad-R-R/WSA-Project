@@ -11,6 +11,8 @@ use App\Http\Controllers\PhotoDetailsController;
 use App\Http\Controllers\AdminController;
 use App\Http\Controllers\ProfileAController;
 use App\Http\Controllers\UserController;
+use App\Http\Controllers\HomeController;
+
 
 /*
 |--------------------------------------------------------------------------
@@ -24,7 +26,7 @@ use App\Http\Controllers\UserController;
 */
 
 
-Route::get('/', [AUserController::class,'home']);
+Route::get('/', [HomeController::class,'home']);
 Route::get('/AbousUs', [AboutController::class,'AbousUsUser']);
 
 Route::get('/Gallery', [/* A controller that is used to handle the gallery routes. */
@@ -98,14 +100,7 @@ Route::get('/jobshow', [JobAnnouncementController::class,'jobtable'])->name('job
 Route::get('/show/jobs/{id}', [JobDescrptionController::class,'ViweJobs'])->name('ShowJobs');
 
 
-
-
-
-
 }
 );
 
-
-// Route::get('/showBanners', [GalleryController::class,'showBanners'])->name('showBanners');
-// Route::get('/contactAdmin/{id}', [ContactController::class,'delete'])->name('delete');
 

@@ -42,6 +42,8 @@
                       <th >job title</th>
                       <th >subject</th>
                       <th >email</th>
+                      <th>phone</th>
+                      
                       <th >position</th>
                       <th >years Of Exp</th>
                       <th >name</th>
@@ -59,6 +61,7 @@
                       <td>{{$i->id}}</td>
                       <td>{{$i->subject}}</td>
                       <td>{{$i->email}}</td>
+                      <td>{{$i->phoneNum}}</td>
                       <td>{{$i->position}}</td>
                       <td>{{$i->yearsOfExp}}</td>
                       <td>{{$i->name}}</td>

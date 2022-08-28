@@ -1,6 +1,6 @@
 
 
-@extends('layout.admin');
+@extends('layout.admin')
 
 @section('body')
 
@@ -98,21 +98,14 @@
                   <input type="email" class="form-control" name="email" id="exampleInputEmail1" value="{{Auth::user()->email}}" placeholder="Enter email">
                 </div>
                 <div class="form-group">
+                  <label for="exampleInputEmail1">Password</label>
+                  <input type="password" class="form-control" name="password" id="exampleInputEmail1"  placeholder="password">
+                </div>
+                <div class="form-group">
                   <label for="exampleInputPassword1">name</label>
                   <input type="text" class="form-control "  name="name" id="exampleInputPassword1" value="{{Auth::user()->name}}" placeholder="Password">
                 </div>
-                {{-- <div class="form-group">
-                  <label for="exampleInputFile">role</label>
-                  <div class="input-group">
-                   
-                      <input type="text" class="form-control"  name="role"
-                       id="">
-              
-                   
-                  </div>
-                </div> --}}
-                
-              </div>
+             
               <!-- /.card-body -->
 
               <div class="card-footer">

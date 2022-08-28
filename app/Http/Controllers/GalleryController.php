@@ -33,11 +33,14 @@ class GalleryController extends Controller
 
     public function bannerPhotoP(Request $request)
     {
+
+        if($request){
         $imge=$request->file('banner');
         $type=$request->input('type');
         $color=$request->input('color');
         $size=$request->input('size');
         $desc=$request->input('desc');
+        // dd($request);
 
         
         
@@ -51,7 +54,9 @@ class GalleryController extends Controller
        
         $data=array('type'=>$type,'color'=>$color,'size'=>$size,'desc'=>$desc,'image'=>$filename);
         banner::create($data);
-     
+    }else{
+        return back()->with(['Faild'=>'Faild!']);
+    }
 
         return back();
     }

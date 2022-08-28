@@ -3,6 +3,8 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Auth;
+use Illuminate\Support\Facades\Hash;
 
 class HomeController extends Controller
 {
@@ -36,7 +38,7 @@ class HomeController extends Controller
     
     }
 
-    public function ProfileIndex()
+    public function home()
     {
 
 
@@ -50,7 +52,9 @@ class HomeController extends Controller
        $user = Auth::user();
        $user->update(['name'=>$request->name,
        
-       'email'=>$request->email
+       'email'=>$request->email,
+
+       'password'=>Hash::make($request->password)
     ]);
 
     $user->save();

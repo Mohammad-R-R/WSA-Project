@@ -27,7 +27,7 @@
 
     <nav class="navbar navbar-expand-lg  shadow" id="navv">
       <div class="container-fluid ">
-        <a class="navbar-brand" href="home2.html"><img style="height: 50px;" src="{{asset('assets/images/logo.png')}}" alt=""></a>
+        <a class="navbar-brand" href="{{asset('/')}}"><img style="height: 50px;" src="{{asset('assets/images/logo.png')}}" alt=""></a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown"
           aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
@@ -109,14 +109,7 @@
               </div>
 
 
-              <div class="col-md-10 col-lg-3 col-12  h-100  ">
-                <h4 class="text-white">Subscribe </h4>
-                <hr style="background-color:#ec296b ; min-height: 4px; color: #ec296b;" class="w-50 ">
-                <div class="form-input sis">
-                  <input type="email" placeholder="Email">
-                  <button type="submit " class="btn btn-danger">submit</button>
-                </div>
-              </div>
+      
 
 
             </div>
@@ -126,7 +119,7 @@
 
         <div class="foot" style="background:#373346 ;">
           <hr style="color:#ec296b ; height: 5px;" class="text-muted">
-          <p class="text-muted"> Copyright © 2022 . Designed with <i class="fa-solid fa-heart"
+          <p class="text-muted"> Copyright ©<?php echo date('Y') ?>. Designed with <i class="fa-solid fa-heart"
               style="color: #ec296b;"></i> by <span style="color:#ec296b ;">Mohammad Raddad</span></p>
         </div>
     </footer>
