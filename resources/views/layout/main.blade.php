@@ -7,6 +7,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
   <link rel="stylesheet" href="{{asset('assets/css/home.css')}}">
+
   <link rel="stylesheet" href="{{asset('assets/aos-master/dist/aos.css')}}">
   <link rel="stylesheet" href="{{asset('assets/css/about.css')}}">
   <link rel="stylesheet" href="{{asset('assets/plugins/bootstrap-5.2.0-dist/css/bootstrap.css')}}">
@@ -14,11 +15,22 @@
   <link rel="stylesheet" href="{{asset('assets/plugins/slick-1.8.1/slick/slick-theme.css')}}">
   <link rel="stylesheet" href="{{asset('assets/OwlCarousel2-2.3.4/dist/assets/owl.carousel.css')}}">
   <link rel="stylesheet" href="{{asset('assets/plugins/fontawesome-free-6.1.2-web/css/all.min.css')}}">
+  <link rel="stylesheet" href="assets/">
+  <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.12.1/css/jquery.dataTables.css">
+  
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.8.0/dist/leaflet.css" integrity="sha512-hoalWLoI8r4UszCkZ5kL8vayOGVae1oxXe/2A4AO6J9+580uKHDO3JdHb7NzwwzK5xr/Fs0W40kiNHxM9vyTtQ==" crossorigin="" />
+
   @yield('css')
   <link rel="shortcut icon"
     href="{{asset('assets/images/wsa_logo.jpg')}}">
 
- @yield('title');
+    <meta charset="UTF-8">
+    <meta name="description" content="{{Cache::get('meta')->description}}">
+    <meta name="keywords" content="{{Cache::get('meta')->keywords}}">
+    <meta name="author" content="{{Cache::get('meta')->author}}">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+ @yield('title')
 </head>
 
 <body>
@@ -27,7 +39,8 @@
 
     <nav class="navbar navbar-expand-lg  shadow" id="navv">
       <div class="container-fluid ">
-        <a class="navbar-brand" href="{{asset('/')}}"><img style="height: 50px;" src="{{asset('assets/images/logo.png')}}" alt=""></a>
+        <a class="navbar-brand" href="{{asset('/')}}"><img style="height: 50px;" src="{{ url('public/Image/'.Cache::get('logo')->logo) }}" alt=""></a>
+        
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown"
           aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
@@ -38,7 +51,7 @@
               <a class="nav-link active" aria-current="page" href="{{asset('/')}}">Home</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link active" href="{{asset('AbousUs')}}">Abous Us</a>
+              <a class="nav-link active" href="{{asset('AbousUs')}}">About Us</a>
             </li>
             <li class="nav-item">
               <a class="nav-link active" href="{{asset('contact')}}">Contact</a>
@@ -69,10 +82,7 @@
               <div class="col-12  h-100 col-md-3 ">
                 <h4 class="text-white">About us</h4>
                 <hr style="background-color:#ec296b ; min-height: 4px; color: #ec296b;" class="w-50 ">
-                <p class="text-white ">Lorem, ipsum dolor sit amet consectetur adipisicing elit. At nemo dolores culpa.
-                  Sit id fugiat esse,
-                  consectetur consequuntur nemo dicta cum soluta.
-                  Fuga ea facilis vitae amet expedita quibusdam cupiditate.</p>
+                <p class="text-white ">{{Cache::get('footer')->desc}}</p>
               </div>
 
               <div class="col-md-3 col-12  h-100  ">
@@ -95,11 +105,15 @@
                 <div class="fa-address first" style="display: inline-flex;"> <i class="fa-solid fa-house-user "
                     style="color: #ec296b;">
                   </i>
-                  <address class="serv text-white"> al_zawyah-salfeet </address>
+                  <address class="serv text-white"> {{Cache::get('footer')->address}} </address>
                 </div>
 
+                <div>
                 <div class="first "> <i class="fa-solid fa-envelope" style="color: #ec296b; padding-right: 10px;"></i>
-                  <p class="emo serv text-white">mo.rd@hotmail.com</p>
+                  <p class="emo serv text-white">  </p>
+                  <div > <a href="mailto:{{Cache::get('footer')->email}}">{{Cache::get('footer')->email}}</a> </div>
+                  
+                </div>
                 </div>
 
 
@@ -137,6 +151,9 @@
     <script src="{{asset('assets/OwlCarousel2-2.3.4/dist/owl.carousel.min.js')}}"></script>
     <script src="{{asset('assets/aos-master/dist/aos.js')}}"></script>
     <script src="{{asset('assets/js/home.js')}}"></script>
+  
 </body>
 
 </html>
+
+

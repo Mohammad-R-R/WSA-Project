@@ -87,6 +87,10 @@
             @if (session()->has('message'))
                 <div class= "alert alert-success"> {{session()->get('message')}}</div>
             @endif
+
+            @if (session()->has('error'))
+                <div class= "alert alert-danger"> {{session()->get('error')}}</div>
+            @endif
           
             <!-- /.card-header -->
             <!-- form start -->
@@ -95,15 +99,37 @@
               <div class="card-body">
                 <div class="form-group">
                   <label for="exampleInputEmail1">Email address</label>
-                  <input type="email" class="form-control" name="email" id="exampleInputEmail1" value="{{Auth::user()->email}}" placeholder="Enter email">
+                  <input type="email" class="form-control @error('email')
+                      
+                  @enderror" name="email" id="exampleInputEmail1" value="{{Auth::user()->email}}" placeholder="Enter email">
+                </div>
+                <div class="form-group">
+                  <label for="exampleInputEmail1">old Password</label>
+                  <input type="password" class="form-control @error('oldpassword') is-invaild
+                      
+                  @enderror" name="oldpassword" id="exampleInputEmail1"  placeholder="password">
+
+                  @error('oldpassword')
+                <small style="color: brown;"> Error: this field must have a value</small>
+                  @enderror
                 </div>
                 <div class="form-group">
                   <label for="exampleInputEmail1">Password</label>
-                  <input type="password" class="form-control" name="password" id="exampleInputEmail1"  placeholder="password">
+                  <input type="password" class="form-control  @error('password') is-invaild
+                      
+                  @enderror" name="password" id="exampleInputEmail1"  placeholder="password">
+                  @error('password')
+                <small style="color: brown;"> Error: this field must have a value</small>
+              @enderror
                 </div>
                 <div class="form-group">
                   <label for="exampleInputPassword1">name</label>
-                  <input type="text" class="form-control "  name="name" id="exampleInputPassword1" value="{{Auth::user()->name}}" placeholder="Password">
+                  <input type="text" class="form-control @error('name') is-invalid
+                      
+                  @enderror "  name="name" id="exampleInputPassword1" value="{{Auth::user()->name}}" placeholder="name">
+                  @error('name')
+                  <small style='color: brown' >Error: this field must have a value</small>
+                  @enderror
                 </div>
              
               <!-- /.card-body -->

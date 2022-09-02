@@ -4,6 +4,7 @@
 <title>About Us </title>
     
 @endsection
+
 @section('css')
   <link rel="stylesheet" href="{{asset('assets/css/about.css')}}">
     
@@ -28,7 +29,7 @@
   <div class="hp">
     <h1 class="mb-4 " style="color:#605e7e ;"> Why WSA ? </h1>
 
-    <p>{{$data[0]->desc}}</p>
+    <p>{{$data->desc}}</p>
 
     
 

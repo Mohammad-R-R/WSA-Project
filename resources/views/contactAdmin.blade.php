@@ -35,7 +35,7 @@
           
               </div>
               <div class="card-body table-responsive p-0">
-                <table class="table table-striped table-valign-middle">
+                <table class="table table-striped table-valign-middle" id="myTable">
                   <thead>
                   <tr>
                     <th>Email</th>
@@ -60,7 +60,8 @@
                         {{$d->stauts}}
                     </td>
                     <td>
-                        <textarea   cols="35" rows="5" readonly> {{$d->message}}</textarea>
+                      <div style="width: 400px;max-height: 200px; overflow: scroll"> {{$d->message}} </div>
+                       
                         {{-- {{$d->message}} --}}
                     </td>
 
@@ -69,7 +70,7 @@
                     </td>
 
                     <td>
-                        <a href="/contactAdmin/{{$d->id}}">delete</a>
+                        <a href="/contactAdmin/{{$d->id}}" class="btn btn-danger">delete</a>
                     </td>
                   </tr>
                   @endforeach

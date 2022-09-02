@@ -6,16 +6,16 @@
     
 @endsection
 
+
+
 @section('body')
 
-<div class="bodyy shadow" data-aos="zoom-in">
+<div class="bodyy shadow" style="background: url('public/Image/{{$title->background}}') center center fixed no-repeat;" data-aos="zoom-in">
     <div class="color text-center">
       <div class="center">
-        <h3 class="display-6  ">Find your best Banner</h3>
-        <p class="rexa">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Beatae odit expedita tempore fugit
-          modi non vel explicabo,</p>
-        <p class="rexa"> quaerat consectetur maiores eveniet omnis nemo quae. Totam dolor cupiditate repellat ipsam!
-        </p>
+        <h3 class="display-6  ">{{$title->title}}</h3>
+        <p class="rexa">{{$title->desc}}</p>
+       
 
       </div>
 
@@ -27,79 +27,22 @@
     <div class="container ">
 
       <div class="DigitalADS">
+        @foreach ($x as $xx)
+            
+        
         <div>
           <div class="card mx-2">
             <div class="card-body">
-              <a href="{{asset('https://www.rexona.com/my/home.html" target="_blank')}}">
-              <img src="{{asset('https://mir-s3-cdn-cf.behance.net/project_modules/max_1200/bc3022120811707.60b8f26f3d40b.jpg')}}" class="d-block w-100 photo" alt="...">
+              <a href="{{$xx->image_link}}" target=”_blank” >
+              <img src= "{{asset('public/Image/'.$xx->image)}}" class="d-block w-100 photo" alt="...">
               </a>
             
 
             </div>
           </div>
         </div>
-        <div>
-          <div class="card  mx-2">
-            <div class="card-body">
-              <a href="https://www.foodpanda.hu/en/chain/cl3lm/pizza-hut" target="_blank">
-              <img src="https://mir-s3-cdn-cf.behance.net/project_modules/fs/f8f70369627481.5b87cd55b949f.png" class="d-block w-100 photo" alt="...">
-            </a>
-
-            </div>
-          </div>
-        </div>
-        <div>
-          <div class="card  mx-2">
-            <div class="card-body">
-         
-              <a href="https://www.jordan.kfc.me/en/" target="_blank">
-              <img src="https://www.inma.org/files/images/blogs/feature_photos/print_september20_hannah_2020-in-ads-1800.jpg" class="d-block w-100 photo" alt="...">
-              </a>
-            </div>
-          </div>
-        </div>
-
-        <div>
-          <div class="card mx-2">
-            <div class="card-body">
-              <a href="https://www.bk.com/ " target="_blank">
-              <img src="https://i.insider.com/4f0c8843ecad042f0b000013?width=750&format=jpeg&auto=webp" class="d-block w-100 photo" alt="...">
-            </a>
-
-            </div>
-          </div>
-        </div>
-
-        <div>
-          <div class="card mx-2">
-            <div class="card-body">
-              <a href="https://www.ihouse.ps/" target="_blank">
-              <img src="https://ihouse.fra1.digitaloceanspaces.com/images/blogs/Y1gOPkBqS1IqlirwfVFqjIj9VMApAgaljWibhWrw.jpg" class="d-block w-100 photo" alt="...">
-            </a>
-            </div>
-          </div>
-        </div>
-
-        <div>
-          <div class="card mx-2">
-            <div class="card-body">
-              <a href="https://www.lg.com/us" target="_blank">
-              <img src="https://mir-s3-cdn-cf.behance.net/project_modules/max_1200/24a48f21396811.593670ca1a895.jpg" class="d-block w-100 photo" alt="...">
-            </a>
-            </div>
-          </div>
-        </div>
-
-        <div>
-          <div class="card mx-2">
-            <div class="card-body">
-              <a href="https://www.coca-cola.com/" target="_blank">
-              <img src="https://www.researchgate.net/profile/Dunya-Ijam/publication/338375209/figure/fig1/AS:942278470283264@1601668102624/Coca-Cola-advertisement-in-2010.png" class="d-block w-100 photo" alt="...">
-            </a>
-            </div>
-          </div>
-        </div>
-
+        @endforeach
+       
 
       </div>
     </div>
@@ -108,17 +51,14 @@
 
   </div>
   <div class="cutter" id="team">
-    <h2 class="display-5 mt-5 ">why you have to do a digital banner </h2>
-    <h2 class="w-75 m-auto  display-6" style="font-size:larger ; ">Lorem ipsum dolor sit amet consectetur adipisicing elit. Minus dolores consectetur libero
-      placeat fugiat, d
-      eserunt facere similique
-      ducimus ex nobis! Nesciunt repellat excepturi fuga veritatis illo quo animi, veniam perspiciatis!</h2>
+    <h2 class="display-5 mt-5 ">{{$prom->title}} </h2>
+    <h2 class="w-75 m-auto  display-6" style="font-size:larger ; ">{{$prom->desc}}</h2>
      
   </div>
   <div class="Testimonial position-relative" >
     <div class="colored">
       <div class="our-team text-center">
-        <h2 class="display-6">Our Team</h2>
+        <h2 class="display-6" style="color: azure;">Our Team</h2>
       </div>
       <div id="carouselExampleDark" class="carousel carousel-dark slide2 " data-bs-ride="carousel">
         <div class="carousel-indicators">

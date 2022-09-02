@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Contact;
+use App\Models\Logo;
 use App\Http\Requests\StoreContactRequest;
 use App\Http\Requests\UpdateContactRequest;
 use Illuminate\Http\Request;
@@ -17,15 +18,22 @@ class ContactController extends Controller
      */
     public function contact()
     {
-
+        $logo=Logo::All();
      
 
-        return view('contact');
+        return view('contact',compact('logo'));
     }
 
     public function contactP(Request $request)
     { 
         // dd($request);
+        $validate = $request->validate([
+            'phoneNum'=>'required',
+            'name'=>'required',
+            'email'=>'required',
+            'stauts'=>'required',
+            'message'=>'required',
+        ]);
         Contact::create($request->all());
      
 
@@ -40,7 +48,8 @@ class ContactController extends Controller
     public function showw()
     {
         $data = DB::table('contacts')->get();
-        // dd($data);
+
+       
         return view('contactAdmin',compact('data'));
     }
     public function delete($id)

@@ -5,6 +5,7 @@
     
 @endsection
 
+
 @section('body')
 <div class="why-us " style="padding-top: 3rem;" data-aos="fade-up">
     <div class="hp">
@@ -17,7 +18,7 @@
         <label for="type" class="bold"> type:{{$banner->type}} </label> <br>
         <label for="type" class="bold"> size: {{$banner->size}} </label> <br>
         <label for="type" class="bold"> colors:  {{$banner->color}} </label> <br>
-        <label for="type"> <a class="text-decoration-none " href="contact.html">order Now !</a> </label> <br>
+        <label for="type"> <a class="text-decoration-none " href="{{route('Contactt')}}">order Now !</a> </label> <br>
       </div>
 
       <div class="display-6 pb-2 pt-2">

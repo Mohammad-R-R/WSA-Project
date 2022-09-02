@@ -5,6 +5,10 @@
 <title>Gallery</title>
     
 @endsection
+
+
+
+
 @section('body')
 
 <div class="body-about shadow" data-aos="zoom-in">

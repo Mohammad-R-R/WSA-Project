@@ -2,13 +2,20 @@
 <link type="text/css" rel="stylesheet" id="dark-mode-custom-link">
 <link type="text/css" rel="stylesheet" id="dark-mode-general-link">
 <style lang="en" type="text/css" id="dark-mode-custom-style">
-</style><style lang="en" type="text/css" id="dark-mode-native-style">
-</style><style lang="en" type="text/css" id="dark-mode-native-sheet">
-</style><head>
+</style>
+<style lang="en" type="text/css" id="dark-mode-native-style">
+</style>
+<style lang="en" type="text/css" id="dark-mode-native-sheet">
+</style>
+<head>
   <link rel="stylesheet" href="{{asset('../../plugins/datatables-bs4/css/dataTables.bootstrap4.min.css')}}">
   <link rel="stylesheet" href=" {{asset('../../plugins/datatables-responsive/css/responsive.bootstrap4.min.css')}} ">
   <link rel="stylesheet" href="{{asset('../../plugins/datatables-buttons/css/buttons.bootstrap4.min.css')}}">
   <link rel="stylesheet" href="{{asset('../../dist/css/adminlte.min.css')}}">
+  <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.12.1/css/jquery.dataTables.css">
+
+ 
+<script type="text/javascript" src="DataTables/datatables.min.js"></script>
 
 </head>
 <body class="sidebar-mini" style="height: auto" data-new-gr-c-s-check-loaded="14.1075.0" data-gr-ext-installed="">
@@ -19,14 +26,26 @@
 
 
 
-  <link type="text/css" rel="stylesheet" id="dark-mode-custom-link"><link type="text/css" rel="stylesheet" id="dark-mode-general-link"><style lang="en" type="text/css" id="dark-mode-custom-style"></style><style lang="en" type="text/css" id="dark-mode-native-style"></style><style lang="en" type="text/css" id="dark-mode-native-sheet"></style>
+  <link type="text/css" rel="stylesheet" id="dark-mode-custom-link">
+  <link type="text/css" rel="stylesheet" id="dark-mode-general-link">
+  <style lang="en" type="text/css" id="dark-mode-custom-style">
+  </style><style lang="en" type="text/css" id="dark-mode-native-style">
+  </style><style lang="en" type="text/css" id="dark-mode-native-sheet">
+  </style>
 
   
   
   
   
   
-    <link type="text/css" rel="stylesheet" id="dark-mode-custom-link"><link type="text/css" rel="stylesheet" id="dark-mode-general-link"><style lang="en" type="text/css" id="dark-mode-custom-style"></style><style lang="en" type="text/css" id="dark-mode-native-style"></style><style lang="en" type="text/css" id="dark-mode-native-sheet"></style>
+    <link type="text/css" rel="stylesheet" id="dark-mode-custom-link">
+    <link type="text/css" rel="stylesheet" id="dark-mode-general-link">
+    <style lang="en" type="text/css" id="dark-mode-custom-style">
+    </style>
+    <style lang="en" type="text/css" id="dark-mode-native-style">
+    </style>
+
+    <style lang="en" type="text/css" id="dark-mode-native-sheet"></style>
     
     
     
@@ -73,101 +92,10 @@
         <!-- Right navbar links -->
         <ul class="navbar-nav ml-auto">
           <!-- Navbar Search -->
-          <li class="nav-item">
-            <a class="nav-link" data-widget="navbar-search" href="#" role="button">
-              <i class="fas fa-search"></i>
-            </a>
-            <div class="navbar-search-block">
-            
-                
-            </div>
-          </li>
     
-          <!-- Messages Dropdown Menu -->
-          <li class="nav-item dropdown">
-            <a class="nav-link" data-toggle="dropdown" href="#">
-              <i class="far fa-comments"></i>
-              <span class="badge badge-danger navbar-badge">3</span>
-            </a>
-            <div class="dropdown-menu dropdown-menu-lg dropdown-menu-right">
-              <a href="#" class="dropdown-item">
-                <!-- Message Start -->
-                <div class="media">
-                  <img src="{{asset('')}}../../dist/img/user1-128x128.jpg" alt="User Avatar" class="img-size-50 mr-3 img-circle">
-                  <div class="media-body">
-                    <h3 class="dropdown-item-title">
-                      Brad Diesel
-                      <span class="float-right text-sm text-danger"><i class="fas fa-star"></i></span>
-                    </h3>
-                    <p class="text-sm">Call me whenever you can...</p>
-                    <p class="text-sm text-muted"><i class="far fa-clock mr-1"></i> 4 Hours Ago</p>
-                  </div>
-                </div>
-                <!-- Message End -->
-              </a>
-              <div class="dropdown-divider"></div>
-              <a href="#" class="dropdown-item">
-                <!-- Message Start -->
-                <div class="media">
-                  <img src="{{asset('')}}../../dist/img/user8-128x128.jpg" alt="User Avatar" class="img-size-50 img-circle mr-3">
-                  <div class="media-body">
-                    <h3 class="dropdown-item-title">
-                      John Pierce
-                      <span class="float-right text-sm text-muted"><i class="fas fa-star"></i></span>
-                    </h3>
-                    <p class="text-sm">I got your message bro</p>
-                    <p class="text-sm text-muted"><i class="far fa-clock mr-1"></i> 4 Hours Ago</p>
-                  </div>
-                </div>
-                <!-- Message End -->
-              </a>
-              <div class="dropdown-divider"></div>
-              <a href="#" class="dropdown-item">
-                <!-- Message Start -->
-                <div class="media">
-                  <img src="{{asset('')}}../../dist/img/user3-128x128.jpg" alt="User Avatar" class="img-size-50 img-circle mr-3">
-                  <div class="media-body">
-                    <h3 class="dropdown-item-title">
-                      Nora Silvester
-                      <span class="float-right text-sm text-warning"><i class="fas fa-star"></i></span>
-                    </h3>
-                    <p class="text-sm">The subject goes here</p>
-                    <p class="text-sm text-muted"><i class="far fa-clock mr-1"></i> 4 Hours Ago</p>
-                  </div>
-                </div>
-                <!-- Message End -->
-              </a>
-              <div class="dropdown-divider"></div>
-              <a href="#" class="dropdown-item dropdown-footer">See All Messages</a>
-            </div>
-          </li>
+    
           <!-- Notifications Dropdown Menu -->
-          <li class="nav-item dropdown">
-            <a class="nav-link" data-toggle="dropdown" href="#">
-              <i class="far fa-bell"></i>
-              <span class="badge badge-warning navbar-badge">15</span>
-            </a>
-            <div class="dropdown-menu dropdown-menu-lg dropdown-menu-right">
-              <span class="dropdown-item dropdown-header">15 Notifications</span>
-              <div class="dropdown-divider"></div>
-              <a href="#" class="dropdown-item">
-                <i class="fas fa-envelope mr-2"></i> 4 new messages
-                <span class="float-right text-muted text-sm">3 mins</span>
-              </a>
-              <div class="dropdown-divider"></div>
-              <a href="#" class="dropdown-item">
-                <i class="fas fa-users mr-2"></i> 8 friend requests
-                <span class="float-right text-muted text-sm">12 hours</span>
-              </a>
-              <div class="dropdown-divider"></div>
-              <a href="#" class="dropdown-item">
-                <i class="fas fa-file mr-2"></i> 3 new reports
-                <span class="float-right text-muted text-sm">2 days</span>
-              </a>
-              <div class="dropdown-divider"></div>
-              <a href="#" class="dropdown-item dropdown-footer">See All Notifications</a>
-            </div>
-          </li>
+        
           <li class="nav-item">
             <a class="nav-link" data-widget="fullscreen" href="#" role="button">
               <i class="fas fa-expand-arrows-alt"></i>
@@ -185,27 +113,28 @@
       <!-- Main Sidebar Container -->
       <aside class="main-sidebar sidebar-dark-primary elevation-4">
         <!-- Brand Logo -->
-        <a href="{../../index3.html}" class="brand-link">
+        {{-- <a href="{../../index3.html}" class="brand-link">
           <img src="{{asset('')}}../../dist/img/AdminLTELogo.png" alt="AdminLTE Logo" class="brand-image img-circle elevation-3" style="opacity: .8">
           <span class="brand-text font-weight-light">AdminLTE 3</span>
-        </a>
+        </a> --}}
     
         <!-- Sidebar -->
         <div class="sidebar">
+          {{-- <h1 style="color: aliceblue">WSA</h1> --}}
           <!-- Sidebar user (optional) -->
           <div class="user-panel mt-3 pb-3 mb-3 d-flex">
             <div class="image">
               <img src="{{ url('public/Image/'.Auth::user()->image) }}"class="img-circle elevation-2" alt="User Image">
             </div>
             <div class="info">
-              <a href="#" class="d-block">{{Auth::user()->name}}</a>
+              <a href="{{route('admin')}}" class="d-block">{{Auth::user()->name}}</a>
             </div>
           </div>
   
           
     
           <!-- SidebarSearch Form -->
-          <div class="form-inline">
+          {{-- <div class="form-inline">
             <div class="input-group" data-widget="sidebar-search">
               <input class="form-control form-control-sidebar" type="search" placeholder="Search" aria-label="Search">
               <div class="input-group-append">
@@ -214,11 +143,33 @@
                 </button>
               </div>
             </div><div class="sidebar-search-results"><div class="list-group"><a href="#" class="list-group-item"><div class="search-title"><strong class="text-light"></strong>N<strong class="text-light"></strong>o<strong class="text-light"></strong> <strong class="text-light"></strong>e<strong class="text-light"></strong>l<strong class="text-light"></strong>e<strong class="text-light"></strong>m<strong class="text-light"></strong>e<strong class="text-light"></strong>n<strong class="text-light"></strong>t<strong class="text-light"></strong> <strong class="text-light"></strong>f<strong class="text-light"></strong>o<strong class="text-light"></strong>u<strong class="text-light"></strong>n<strong class="text-light"></strong>d<strong class="text-light"></strong>!<strong class="text-light"></strong></div><div class="search-path"></div></a><a href="#" class="list-group-item"><div class="search-title"><strong class="text-light"></strong>N<strong class="text-light"></strong>o<strong class="text-light"></strong> <strong class="text-light"></strong>e<strong class="text-light"></strong>l<strong class="text-light"></strong>e<strong class="text-light"></strong>m<strong class="text-light"></strong>e<strong class="text-light"></strong>n<strong class="text-light"></strong>t<strong class="text-light"></strong> <strong class="text-light"></strong>f<strong class="text-light"></strong>o<strong class="text-light"></strong>u<strong class="text-light"></strong>n<strong class="text-light"></strong>d<strong class="text-light"></strong>!<strong class="text-light"></strong></div><div class="search-path"></div></a><a href="#" class="list-group-item"><div class="search-title"><strong class="text-light"></strong>N<strong class="text-light"></strong>o<strong class="text-light"></strong> <strong class="text-light"></strong>e<strong class="text-light"></strong>l<strong class="text-light"></strong>e<strong class="text-light"></strong>m<strong class="text-light"></strong>e<strong class="text-light"></strong>n<strong class="text-light"></strong>t<strong class="text-light"></strong> <strong class="text-light"></strong>f<strong class="text-light"></strong>o<strong class="text-light"></strong>u<strong class="text-light"></strong>n<strong class="text-light"></strong>d<strong class="text-light"></strong>!<strong class="text-light"></strong></div><div class="search-path"></div></a><a href="#" class="list-group-item"><div class="search-title"><strong class="text-light"></strong>N<strong class="text-light"></strong>o<strong class="text-light"></strong> <strong class="text-light"></strong>e<strong class="text-light"></strong>l<strong class="text-light"></strong>e<strong class="text-light"></strong>m<strong class="text-light"></strong>e<strong class="text-light"></strong>n<strong class="text-light"></strong>t<strong class="text-light"></strong> <strong class="text-light"></strong>f<strong class="text-light"></strong>o<strong class="text-light"></strong>u<strong class="text-light"></strong>n<strong class="text-light"></strong>d<strong class="text-light"></strong>!<strong class="text-light"></strong></div><div class="search-path"></div></a></div></div>
-          </div>
+          </div> --}}
     
           <!-- Sidebar Menu -->
           <nav class="mt-2">
             <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
+
+              
+
+              <li class="nav-item menu-is-opening menu-open">
+                <a href="#" class="nav-link">
+                  
+                  <p>
+                    Home 
+                    <i class="right fas fa-angle-left"></i>
+                  </p>
+                </a>
+                <ul class="nav nav-treeview" style="display: block;">
+                  <li >
+                    {{-- <a href="{{route('The-Home')}}" class="nav-link">Home </a> --}}
+                    <a href="{{route('Htitle')}}" class="nav-link">Change Title and Background  </a>
+                    <a href="{{route('slideshow')}}" class="nav-link">Slide show photos </a>
+                    <a href="{{route('slideshowtable')}}" class="nav-link">Slide show Table </a>
+                    
+                  </li>
+                  
+                </ul>
+              </li>
               <!-- Add icons to the links using the .nav-icon class
                    with font-awesome or any other icon font library -->
               <li class="nav-item menu-is-opening menu-open">
@@ -255,6 +206,9 @@
                   </li>
                   <li >
                     <a href="{{route('machineView')}}" class="nav-link">add Machine </a>
+                  </li>
+                  <li >
+                    <a href="{{route('machinesca')}}" class="nav-link">Machine scaaduchle </a>
                   </li>
                   
                 </ul>
@@ -317,47 +271,51 @@
               </li>
 
 
+              <li class="nav-item menu-is-opening menu-open">
+                <a href="#" class="nav-link">
+                 
+                  <p>
+                    Settings
+                    <i class="right fas fa-angle-left"></i>
+                  </p>
+                </a>
+                <ul class="nav nav-treeview" style="display: block;">
+                  
+                  <li >
+                    
+                    <a href="{{route('logo')}}" class="nav-link">Add Logo </a>
+                  </li>
+                  <li >
+                    <a href="{{route('meta')}}" class="nav-link">Change metas </a>
+                  </li>
+                  <li >
+                    <a href="{{route('footer')}}" class="nav-link">change footer </a>
+                  </li>
+                  {{-- <li >
+                    <a href="{{route('machineView')}}" class="nav-link">add Machine </a>
+                  </li> --}}
+                  
+                </ul>
+              </li>
 
               
               <li class="nmav-ite ">
-                <a href="{{ route('logout') }}" onclick="event.preventDefault(); document.getElementById('frm-logout').submit();" class="nav-link">
+                @auth
                   
-                  <p>
-                    LogOut
-                    {{-- <i class="right fas fa-angle-left"></i> --}}
-                  </p>
-                </a>
+                <li class="nav-item ">
+                  <a class="nav-link "  onclick="event.preventDefault(); document.getElementById('frm-logout').submit();">
+                      Logout
+                  </a>    
+                  <form id="frm-logout" action="{{ route('logout') }}" method="POST" style="display: none;">
+                    @csrf
+                      {{ csrf_field() }}
+                  </form>
+                </li>
+                @endauth()
         
               </li>
               
-              
-
-      
-              
-              
-              
-              
-              
-             
-              
-              
-              
-              
-              
-              
-              
-              
-              
-              
-              
-              
-              
-              
-              
-              
-              
-              
-              
+           
               
             </ul>
           </nav>
@@ -371,9 +329,9 @@
       <!-- /.content-wrapper -->
       <footer class="main-footer">
         <div class="float-right d-none d-sm-block">
-          <b>Version</b> 3.2.0
+
         </div>
-        <strong>Copyright © 2014-2021 <a href="https://adminlte.io">AdminLTE.io</a>.</strong> All rights reserved.
+      </strong> All rights reserved.
       </footer>
     
       <!-- Control Sidebar -->
@@ -392,7 +350,7 @@
     <!-- AdminLTE for demo purposes -->
     <script src="{{asset('../../dist/js/demo.js')}}"></script>
 
-    <script src="{{asset('../../plugins/datatables/jquery.dataTables.min.js')}}"></script>
+<script src="{{asset('../../plugins/datatables/jquery.dataTables.min.js')}}"></script>
 <script src="{{asset('../../plugins/datatables-bs4/js/dataTables.bootstrap4.min.js')}}"></script>
 <script src="{{asset('../../plugins/datatables-responsive/js/dataTables.responsive.min.js')}}"></script>
 <script src="{{asset('../../plugins/datatables-responsive/js/responsive.bootstrap4.min.js')}}"></script>
@@ -404,6 +362,9 @@
 <script src="{{asset('../../plugins/datatables-buttons/js/buttons.html5.min.js')}}"></script>
 <script src="{{asset('../../plugins/datatables-buttons/js/buttons.print.min.js')}}"></script>
 <script src="{{asset('../../plugins/datatables-buttons/js/buttons.colVis.min.js')}}"></script>
-    
-    
-    <grammarly-desktop-integration data-grammarly-shadow-root="true"></grammarly-desktop-integration></body></html>
+<script src="https://cdn.datatables.net/1.12.1/js/jquery.dataTables.min.js"></script>
+<script>$(document).ready( function () {
+  $('#myTable').DataTable();
+} );</script>
+    </body>
+    </html>

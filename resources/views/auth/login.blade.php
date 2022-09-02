@@ -10,16 +10,16 @@
     <!-- CSS only -->
 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx" crossorigin="anonymous">
 </head>
-<body>
+<body style="background: url('https://wallpapercave.com/wp/wp2508260.jpg')">
 
-    <div class="card-header"> <a href="{{ __('register') }}">regg</a></div>
+   
 
-    <div class="card w-50 m-auto mt-5">
+    <div class="card w-50 m-auto mt-5" style="background: transparent;color:white;box-shadow: 2px black;">
 
-        <form method="POST" action="{{ route('login') }}">
+        <form method="POST" action="{{ route('login') }}" style="margin: 2px;">
             @csrf
 
-            <div class="row mb-3">
+            <div class="row m-3">
                 <label for="email" class="col-md-4 col-form-label text-md-end">{{ __('Email Address') }}</label>
 
                 <div class="col-md-6">
@@ -33,7 +33,7 @@
                 </div>
             </div>
 
-            <div class="row mb-3">
+            <div class="row m-3">
                 <label for="password" class="col-md-4 col-form-label text-md-end">{{ __('Password') }}</label>
 
                 <div class="col-md-6">

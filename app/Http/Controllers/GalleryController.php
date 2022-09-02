@@ -8,6 +8,12 @@ use App\Http\Requests\StoreGalleryRequest;
 use Illuminate\Http\Request;
 use App\Http\Requests\UpdateGalleryRequest;
 use DB;
+use App\Models\Logo;
+use Illuminate\Support\Facades\Cache;
+// require 'vendor/autoload.php';
+
+// import the Intervention Image Manager Class
+use Intervention\Image\ImageManagerStatic as Image;
 
 class GalleryController extends Controller
 {
@@ -18,10 +24,12 @@ class GalleryController extends Controller
      */
     public function Gallery()
     {
+        
+      
 
      
 
-        return view('Gallery');
+        return view('Gallery',compact('logo'));
     }
 
     public function bannerPhoto()
@@ -32,9 +40,19 @@ class GalleryController extends Controller
     }
 
     public function bannerPhotoP(Request $request)
+
     {
 
-        if($request){
+        
+    $validate = $request->validate([
+        'banner'=>'required|mimes:webp,jpeg,jpg,png,gif',
+        'type'=>'required',
+        'color'=>'required',
+        'size'=>'required',
+        'desc'=>'required',
+    ]);
+
+  
         $imge=$request->file('banner');
         $type=$request->input('type');
         $color=$request->input('color');
@@ -48,17 +66,16 @@ class GalleryController extends Controller
             $file= $request->file('banner');
             $filename= date('YmdHi').$file->getClientOriginalName();
             $file-> move(public_path('public/Image'), $filename);
+            // $re=Image::make(public_path('public/Image'), $filename)->resize(200,200);
             $data['banner']= $filename;
             
         }
        
         $data=array('type'=>$type,'color'=>$color,'size'=>$size,'desc'=>$desc,'image'=>$filename);
         banner::create($data);
-    }else{
-        return back()->with(['Faild'=>'Faild!']);
-    }
+    
 
-        return back();
+        return back()->with(['done'=>'banner has been added successfully ']);
     }
 
     public function showBanners()
@@ -66,20 +83,27 @@ class GalleryController extends Controller
 
          $data=banner::All();
          $Machinedata=machine::All();
-        return view('Gallery',compact('data','Machinedata'));
+         $logo=Logo::All();
+        return view('Gallery',compact('data','Machinedata','logo'));
     }
 
     public function detail($id)
     {
-        $banner = banner::find($id);
+         
+         
+         $banner = banner::findOrFail($id);
        
-        return view('details',compact('banner'));
+        $logo=Logo::All();
+       
+        return view('details',compact('banner','logo'));
     
     }
 
     public function bannerDelete($id)
     { 
-        $user = banner::find($id);
+        
+        $user = banner::findOrFail($id);
+       
         
         $user->delete();
    
@@ -89,9 +113,48 @@ class GalleryController extends Controller
     }
 
     public function bannerEdit($id)
-    {
+    { 
         
+        $user = banner::findOrFail($id);
+
+      
+   
+        return view('editBanner',compact('user'));
+
+       
+
     }
+
+    public function bannerEditP(Request $request)
+    { 
+        if($request->file('banner')){
+            $file= $request->file('banner');
+            $filename= date('YmdHi').$file->getClientOriginalName();
+            $file-> move(public_path('public/Image'), $filename);
+            $data['banner']= $filename;
+
+         
+            
+        }
+        $us= banner::where('id',$request->id)->update(['type'=>$request->type,
+         'size'=>$request->size,
+         'color'=>$request->color,
+         'desc'=>$request->desc,
+         'image'=>$filename
+         
+        
+        ]);
+      
+    //    dd($us);
+        
+       
+   
+        return back();
+
+
+    }
+
+  
 
     public function  bannersca(){
         $data=banner::All();
@@ -111,7 +174,15 @@ class GalleryController extends Controller
 
     public function machinePhotoP(Request $request)
     {
-        $imge=$request->file('banner');
+        $validate = $request->validate([
+            'machine'=>'required|mimes:webp,jpeg,jpg,png,gif',
+            'type'=>'required',
+            'color'=>'required',
+            'size'=>'required',
+            'desc'=>'required',
+        ]);
+    
+        $imge=$request->file('machine');
         $type=$request->input('type');
         $color=$request->input('color');
         $size=$request->input('size');
@@ -131,7 +202,77 @@ class GalleryController extends Controller
         machine::create($data);
      
 
+        return back()->with(['doneM'=>'Machine has been added successfully ']);
+    }
+
+    public function  machinesca(){
+        $data=machine::All();
+        return view('machineSca',compact('data'));
+    }
+
+    public function machineDelete($id)
+    { 
+        
+        $user = machine::findOrFail($id);
+       
+        
+        $user->delete();
+   
         return back();
+
+
+    }
+
+    
+    public function machineEdit($id)
+    { 
+        
+        $user = machine::findOrFail($id);
+
+      
+   
+        return view('editMachine',compact('user'));
+
+       
+
+    }
+
+    public function machineEditP(Request $request)
+    { 
+
+        $validate = $request->validate([
+            'machine'=>'required|mimes:webp,jpeg,jpg,png,gif',
+            'type'=>'required',
+            'color'=>'required',
+            'size'=>'required',
+            'desc'=>'required',
+        ]);
+        if($request->file('machine')){
+            $file= $request->file('machine');
+            $filename= date('YmdHi').$file->getClientOriginalName();
+            $file-> move(public_path('public/Image'), $filename);
+            $data['machine']= $filename;
+
+         
+            
+        }
+        // dd($request->machine,$request->size);
+        $us= machine::where('id',$request->id)->update(['type'=>$request->type,
+         'size'=>$request->size,
+         'color'=>$request->color,
+         'desc'=>$request->desc,
+         'image'=>$request->machine,
+         
+        
+        ]);
+      
+    //    dd($us);
+        
+       
+   
+        return back();
+
+
     }
 
     // public function showMachines()
@@ -144,9 +285,9 @@ class GalleryController extends Controller
 
     public function Mdetail($id)
     {
-        $machine = machine::find($id);
-    //    dd($machine);
-        return view('machineDetails',compact('machine'));
+        $machine  =machine::findOrFail($id);
+            $logo=Logo::All();
+        return view('machineDetails',compact('machine','logo'));
      
     }
 

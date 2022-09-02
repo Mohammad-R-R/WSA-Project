@@ -8,12 +8,12 @@
       <div class="container-fluid">
         <div class="row mb-2">
           <div class="col-sm-6">
-            <h1>Simple Tables</h1>
+            <h1>Job Title :{{$title->title}}</h1>
           </div>
           <div class="col-sm-6">
             <ol class="breadcrumb float-sm-right">
               <li class="breadcrumb-item"><a href="#">Home</a></li>
-              <li class="breadcrumb-item active">Simple Tables</li>
+              <li class="breadcrumb-item active">{{$title->title}}</li>
             </ol>
           </div>
         </div>
@@ -36,10 +36,10 @@
               </div>
               <!-- /.card-header -->
               <div class="card-body p-0">
-                <table class="table table-striped">
+                <table class="table table-striped" id="myTable">
                   <thead>
                     <tr>
-                      <th >job title</th>
+                      {{-- <th >job title</th> --}}
                       <th >subject</th>
                       <th >email</th>
                       <th>phone</th>
@@ -58,7 +58,7 @@
                         
                   
                     <tr>
-                      <td>{{$i->id}}</td>
+                      {{-- <td>{{$i->title}}</td> --}}
                       <td>{{$i->subject}}</td>
                       <td>{{$i->email}}</td>
                       <td>{{$i->phoneNum}}</td>

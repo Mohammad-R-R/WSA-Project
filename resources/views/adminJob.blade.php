@@ -29,7 +29,14 @@
           <div class="col-md-12">
             <!-- general form elements -->
             <div class="card-header">
-                <h3 class="card-title">General</h3>
+              @if (session()->has('job'))
+                    
+              <div class= "alert alert-success">
+                  
+                  {{session()->get('job')}} 
+                 
+                 </div>
+              @endif
   
                 <div class="card-tools">
                   <button type="button" class="btn btn-tool" data-card-widget="collapse" title="Collapse">
@@ -44,24 +51,38 @@
                 @csrf
                 <div class="card-body">
                   <div class="form-group">
-                    <label for="exampleInputEmail1">Titile</label>
-                    <input type="title" name="title" class="form-control" id="exampleInputEmail1" placeholder="Enter email">
+                    <label for="exampleInputEmail1">Title</label>
+                    <input type="text" name="title" class="form-control @error('title')
+                    
+                        
+                    @enderror" id="exampleInputEmail1" placeholder="Job Title">
+
+                    @error('title') <p style="color: brown">empty feild</p> @enderror
                   </div>
                   <div class="form-group">
                     <label for="exampleInputPassword1">job Descrption</label>
-                  <textarea name="desc" id="JObdesc" cols="30" rows="10" placeholder="job descrption"></textarea>
+                  <textarea name="desc" id="JObdesc" class="@error('desc')
+                      
+                  @enderror" cols="30" rows="10" placeholder="job descrption"></textarea>
+                  @error('desc') <p style="color: brown">empty feild</p> @enderror
                   </div>
                   <div class="form-group">
                     <label for="exampleInputFile">File input</label>
                     <div class="input-group">
                       <div class="custom-file">
-                        <input type="file" name="jobPhoto" class="custom-file-input" id="exampleInputFile">
+                        <input type="file" name="jobPhoto" class="custom-file-input @error('jobPhoto')
+                            
+                        @enderror" id="exampleInputFile">
                         <label class="custom-file-label" for="exampleInputFile">Choose file</label>
+                       
                       </div>
                       <div class="input-group-append">
                         <span class="input-group-text">Upload</span>
+                     
                       </div>
+                     
                     </div>
+                    @error('jobPhoto') <p style="color: brown">No photo was selected</p> @enderror
                   </div>
              
                 </div>

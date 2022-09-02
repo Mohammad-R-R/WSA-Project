@@ -3,6 +3,8 @@
 namespace App\Http\Controllers;
 
 use App\Models\JobAnnouncement;
+use App\Models\JobDescrption;
+use App\Models\Logo;
 use App\Http\Requests\StoreJobAnnouncementRequest;
 use App\Http\Requests\UpdateJobAnnouncementRequest;
 use Illuminate\Http\Request;
@@ -31,6 +33,13 @@ class JobAnnouncementController extends Controller
     
     public function jobinfoP(Request $request )
     {
+        $validate = $request->validate([
+            'jobPhoto'=>'required|mimes:webp,jpeg,jpg,png,gif',
+            'desc'=>'required',
+            'title'=>'required'
+            
+        ]);
+        
         $imge=$request->file('jobPhoto');
         $jobDesc=$request->input('desc');
         $title=$request->input('title');
@@ -51,19 +60,21 @@ class JobAnnouncementController extends Controller
         JobAnnouncement::create($data);
      
 
-        return back();
+        return back()->with(['job'=>"Created seccessfully"]);
         // return view('adminJob');
     }
 
     public function jobView()
     {
         $view= JobAnnouncement::All();
+        $logo= Logo::All();
         
-         return view('job',compact('view'));
+         return view('job',compact('view','logo'));
     }
 
     public function jobtable()
-    {$view= JobAnnouncement::All();
+    {           $view= JobAnnouncement::All();
+        // $count=JobDescrption::where('job_announcements_id',$id)->count();
         return view('jobtable',compact('view'));
     }
 

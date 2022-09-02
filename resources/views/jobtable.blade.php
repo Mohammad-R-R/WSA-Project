@@ -14,6 +14,7 @@
             <ol class="breadcrumb float-sm-right">
               <li class="breadcrumb-item"><a href="#">Home</a></li>
               <li class="breadcrumb-item active">Applications table</li>
+              
             </ol>
           </div>
         </div>
@@ -36,12 +37,14 @@
               </div>
               <!-- /.card-header -->
               <div class="card-body p-0">
-                <table class="table table-striped">
+                <table class="table table-striped" id="myTable">
                   <thead>
                     <tr>
                       <th >job title</th>
                     
                       <th>view</th>
+                      <th>Delete</th>
+                      
                       
                     </tr>
                   </thead>
@@ -51,7 +54,10 @@
                   
                     <tr>
                       <td>{{$i->title}}</td>
-                      <td><a href="/show/jobs/{{$i->id}}" class="btn btn-primary">View applications</a></td>
+                   
+                      <td><a href="{{route('ShowJobs',$i->id)}}" class="btn btn-primary">View applications</a></td>
+                      <td><a href="{{route('deleteJobs',$i->id)}}" class="btn btn-danger">Delete</a></td>
+
                       
                  
                     </tr>

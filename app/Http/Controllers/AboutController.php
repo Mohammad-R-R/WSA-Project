@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\About;
+use App\Models\Logo;
 use App\Http\Requests\StoreAboutRequest;
 use App\Http\Requests\UpdateAboutRequest;
 use Illuminate\Http\Request;
@@ -25,7 +26,8 @@ class AboutController extends Controller
     public function AbousUsAdmin()
     {
         
-        $data = DB::table('abouts')->get();
+        $data =About::first() ;
+
 
 
         return view('aboutAdmin',compact('data'));
@@ -34,10 +36,11 @@ class AboutController extends Controller
     public function AbousUsUser()
     {
         
-        $data = DB::table('abouts')->get();
+        $data =About::first() ;
+        $logo=Logo::first();
    
 
-        return view('about',compact('data'));
+        return view('about',compact('data','logo'));
     }
 
     // public function AbousUsAdminView()
@@ -51,7 +54,11 @@ class AboutController extends Controller
 
     public function AbousUsAdminP(Request $request)
     {
-   
+        $validate = $request->validate([
+          
+            'dec'=>'required'
+        ]);
+
         $data= About::updateOrCreate([
             'id'=>1,
         ],[
@@ -60,7 +67,7 @@ class AboutController extends Controller
 
         // dd($data->desc);
        
-        return back();
+        return back()->with(['about'=>"updated seccessfully"]);
     }
     /**
      * Show the form for creating a new resource.

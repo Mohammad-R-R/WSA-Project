@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\JobDescrption;
+use App\Models\Logo;
 use App\Models\JobAnnouncement;
 use App\Http\Requests\StoreJobDescrptionRequest;
 use App\Http\Requests\UpdateJobDescrptionRequest;
@@ -19,14 +20,28 @@ class JobDescrptionController extends Controller
     {
 
         $id=JobAnnouncement::find($id);
-        // dd($id);
+        $logo=Logo::All();
 
-        return view('JobDe',compact('id'));
+        return view('JobDe',compact('id','logo'));
     }
 
 
     public function app(Request $request)
     {
+
+        $validate = $request->validate([
+            'subject'=>'required',
+            'email'=>'required',
+            'position'=>'required',
+            'year'=>'required',
+            'name'=>'required',
+            'content'=>'required',
+            'phone'=>'required'
+            
+            
+           
+        ]);
+
         $job_announcements_id=$request->input('forID');
         $subject=$request->input('subject');
         $email	=$request->input('email');
@@ -35,6 +50,8 @@ class JobDescrptionController extends Controller
         $yearsOfExp=$request->input('year');
         $name=$request->input('name');
         $letter=$request->input('content');
+
+        
 
         
       
@@ -48,7 +65,7 @@ class JobDescrptionController extends Controller
     JobDescrption::create($data);
      
 
-        return back();
+        return back()->with(["joo"=>"your applecation sent seccessfully"]);
         
 
         
@@ -59,9 +76,24 @@ class JobDescrptionController extends Controller
     {
 
         $dd=JobDescrption::where('job_announcements_id',$id)->get();
-        // dd($dd[0]->job_announcements_id);
+        $title=JobAnnouncement::find($id);
+        // $count=JobDescrption::where('job_announcements_id',$id)->count();
+        // dd($count);
+       
 
-        return view('tabledesc',compact('dd'));
+        return view('tabledesc',compact('dd','title'));
+    }
+
+
+    public function deleteJobs($id)
+    {
+
+        $dd=JobDescrption::where('job_announcements_id',$id)->delete();
+        $title=JobAnnouncement::find($id)->delete();
+      
+       
+
+        return back();
     }
 
 

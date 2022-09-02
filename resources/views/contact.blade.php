@@ -5,7 +5,7 @@
 @section('title')
 <title>Contact </title>
     
-@endsection
+
 
 @section('body')
 
@@ -25,10 +25,15 @@
     <div class="hp">
         <div class="row">
             <div class="col-12 col-md-6">
-                <div class= "alert alert-success">
-                     {{session()->get('message')}} 
+                @if (session()->has('message'))
                     
-                    </div>
+                <div class= "alert alert-success">
+                    
+                    {{session()->get('message')}} 
+                   
+                   </div>
+                @endif
+
         <h3 class="mb-4" style="color:#605e7e ; font-size: 1.75rem; font-weight: 500;"> Contact form </h2>
             <div class=" card pb-5 ps-5 pt-3 shadow">
                     <form action="{{route('contact')}}" method="post">
@@ -36,28 +41,52 @@
                 <div class="form ">
                     <div class="email">
 
-                        <input type="email" name="email" class="email" placeholder="Email address">
+                        <input type="email" name="email" class="form-control @error('email') is-invalid
+                            
+                        @enderror" placeholder="Email address">
+                        @error('email')
+                        <div><p style="color:brown">empty field</p></div>
+                    @enderror
                     </div>
 
 
 
                     <div class="password">
 
-                        <input type="text" name="name" class="text" placeholder="Name ">
+                        <input type="text" name="name" class="form-control @error('name') is-invalid
+                            
+                        @enderror" placeholder="Name ">
+
+                        @error('name')
+                            <div><p style="color:brown">empty field</p></div>
+                        @enderror
                     </div>
                     <div class="phone">
 
-                        <input type="number" name="phoneNum" class="text" placeholder="phonenumber ">
+                        <input type="number" name="phoneNum" class="form-control @error('phoneNum') is-invalid
+                            
+                        @enderror" placeholder="phonenumber ">
+                        
+                        @error('phoneNum')
+                            <div><p style="color:brown">empty field</p></div>
+                        @enderror
                     </div>
 
                     <div class="sutats">
 
-                        <input type="text" name="stauts" class="text" placeholder="stauts ">
+                        <input type="text" name="stauts" class="form-control @error('stauts') is-invalid
+                            
+                        @enderror" placeholder="stauts ">
+                            @error('stauts')
+                            <div><p style="color:brown">empty field</p></div>
+                        @enderror
                     </div>
 
                     <div class="content">
 
-                        <textarea class="textarea"  id="con" cols="30" name="message" rows="10"
+                        <textarea class="form-control @error('message') is-invalid
+                            
+                        @enderror"  id="con" cols="30" name="message" rows="10"
                             placeholder=" Message "></textarea>
                     </div>
                     <div class="btn w-100 border-0">
@@ -79,14 +108,25 @@
                 <div id="map"></div>
             
                
-                <script
-                  src="{{asset('https://maps.googleapis.com/maps/api/js?key=AIzaSyB41DRUbKWJHPxaFjMAwdrzWzbVKartNGg&callback=initMap&v=weekly')}}"
-                  defer
-                ></script>
+               
                 </div>
         </div>
     </div>
 </div>
 </div>
     
+
+<script> 
+
+    var map = L.map('map').setView([32.100048, 35.049135], 13);
+    
+    L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
+        attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+    }).addTo(map);
+    
+    L.marker([32.100048,  35.049135]).addTo(map)
+        .bindPopup('A pretty CSS3 popup.<br> Easily customizable.')
+        .openPopup();
+                
+                </script>
 @endsection

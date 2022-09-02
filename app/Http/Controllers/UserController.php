@@ -9,8 +9,15 @@ use Auth;
 class UserController extends Controller
 {
     public function storeImage(Request $request){
+
        
         $data=  Auth::User();
+
+        $validate=$request->validate([
+                    'image'=>'required|mimes:webp,jpeg,jpg,png,gif',
+          
+            
+        ]);
         
         if($request->file('image')){
             $file= $request->file('image');
