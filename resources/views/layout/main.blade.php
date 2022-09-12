@@ -111,7 +111,31 @@
                 <div>
                 <div class="first "> <i class="fa-solid fa-envelope" style="color: #ec296b; padding-right: 10px;"></i>
                   <p class="emo serv text-white">  </p>
-                  <div > <a href="mailto:{{Cache::get('footer')->email}}">{{Cache::get('footer')->email}}</a> </div>
+                  <div > <a href="mailto:{{Cache::get('footer')->email}}" class="text-decoration-none">{{Cache::get('footer')->email}}</a> </div>
+                  
+                </div>
+                </div>
+
+
+
+
+
+              </div>
+
+
+              <div class="     col-md-3 col-12  h-100  ">
+                <h4 class="text-white">Author soicals</h4>
+                <hr style="background-color:#ec296b ; min-height: 4px; color: #ec296b;" class="w-50 ">
+
+                <div class="fa-address first" style="display: inline-flex;"> <i class="fa-brands fa-linkedin" style="color: #ec296b; padding-right: 10px;" ></i>
+                  <a href="https://www.linkedin.com/in/mohammad-raddad-6a613510b/"  target="_blank" class="text-decoration-none">Linked In</a>
+                </div>
+
+                <div>
+                 
+                <div class="first "> <i class="fa-brands fa-github" style="color: #ec296b; padding-right: 10px;"></i>
+                  <p class="emo serv text-white">  </p>
+                  <div > <a  href="https://github.com/Mohammad-R-R" class="text-decoration-none" target="_blank">GitHub</a> </div>
                   
                 </div>
                 </div>

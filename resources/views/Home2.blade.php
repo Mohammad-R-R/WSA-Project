@@ -55,7 +55,7 @@
     <h2 class="w-75 m-auto  display-6" style="font-size:larger ; ">{{$prom->desc}}</h2>
      
   </div>
-  <div class="Testimonial position-relative" >
+  {{-- <div class="Testimonial position-relative" >
     <div class="colored">
       <div class="our-team text-center">
         <h2 class="display-6" style="color: azure;">Our Team</h2>
@@ -118,5 +118,5 @@
       </div>
     </div>
 
-  </div>
+  </div> --}}
 @endsection
